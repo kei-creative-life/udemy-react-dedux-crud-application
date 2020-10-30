@@ -1,13 +1,29 @@
 import React, { Component } from 'react';
+// import PropTypes from 'prop-types';
 
-class App extends Component {
+export const App = () => (<Counter></Counter>)
+
+class Counter extends Component {
+  constructor(props) {
+    super(props)
+    console.log(this.state)
+    this.state = { count: 0 }
+  }
+
+  handlePlusButton = () => {
+    this.setState({ count: this.state.count + 1 })
+  }
+
+  handleMinusButton = () => {
+    this.setState({ count: this.state.count - 1 })
+  }
   render() {
     return (
-      <div>
-        <h1>Hello World</h1>
-      </div>
-    );
+      <React.Fragment>
+        <div>counter: {this.state.count}</div>
+        <button onClick={this.handlePlusButton}>+1</button>
+        <button onClick={this.handleMinusButton}>-1</button>
+      </React.Fragment>
+    )
   }
 }
-
-export default App;
