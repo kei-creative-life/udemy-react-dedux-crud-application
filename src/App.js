@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-// import PropTypes from 'prop-types';
 
 export const App = () => (<Counter></Counter>)
+
+console.log("Hello")
 
 class Counter extends Component {
   constructor(props) {
